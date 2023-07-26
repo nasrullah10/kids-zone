@@ -54,7 +54,7 @@ class HomeController extends Controller
             Session::flash('error', 'You have already purchased this course.'); 
             return redirect()->back();
         }
-        \Stripe\Stripe::setApiKey('sk_test_51NMA2IGdj13c54br4XOU19H90iezydbjNLvFocYlmupAANfUERY4js82HrABNAr6LkWzzubxuCNS9Ktews9dIKVN00z6IaEg8p');
+        \Stripe\Stripe::setApiKey(config('sk'));
  
         $course_name = $request->course_name;
         $totalprice = $request->course_price;
